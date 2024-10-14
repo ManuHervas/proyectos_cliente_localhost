@@ -1,8 +1,8 @@
 window.addEventListener("load", function () {
   //Trate la plantilla
   var contenedor = document.getElementById("contenedor");
-  var auxiliar = this.document.createElement("div");
-  var auxTbody = this.document.createElement("tbody");
+  var auxiliar = document.createElement("div");
+  var auxTbody = document.createElement("tbody");
   var tabla;
   fetch("./plantillas/tabla.html")
     .then((respuesta) => respuesta.text())
@@ -17,6 +17,7 @@ window.addEventListener("load", function () {
         .then((respuesta) => respuesta.json())
         .then((datos) => {
           datos.forEach((element) => {
+            debugger;
             let fila = modelo.cloneNode(true);
             fila.children[0].innerHTML = element.dni;
             fila.children[1].innerHTML = element.nombre;
