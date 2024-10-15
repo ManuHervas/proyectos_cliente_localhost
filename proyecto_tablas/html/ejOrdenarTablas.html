@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Nombres y DNI</title>
+    <script src="../js/Tablas.js"></script>
+    <script src="../js/ejOrdenarTablas.js"></script>
+    <script src="../js/miLibreria.js"></script>
+    <style>
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        thead {
+            background-color: #009879;
+            color: white;
+            text-align: left;
+        }
+
+        th,
+        td {
+            padding: 12px 15px;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        tbody tr:last-of-type {
+            border-bottom: 2px solid #009879;
+        }
+
+        tbody tr:hover {
+            background-color: #f1f1f1;
+            cursor: pointer;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            table {
+                width: 90%;
+            }
+        }
+
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        input[type="text"] {
+            width: 200px;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .guardar {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .cancelar {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Tabla de Nombres y DNI</h2>
+
+    <table id="t1">
+        <thead>
+            <tr>
+                <th id="nombre">Nombre</th>
+                <th id="dni">DNI</th>
+                <th id="actions" style="visibility: hidden;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Juan Pérez</td>
+                <td>12345678G</td>
+            </tr>
+            <tr>
+                <td>María Gómez</td>
+                <td>87654321R</td>
+            </tr>
+            <tr>
+                <td>Carlos Fernández</td>
+                <td>11223344H</td>
+
+            </tr>
+            <tr>
+                <td>Ana López</td>
+                <td>22334455J</td>
+
+            </tr>
+            <tr>
+                <td>Jose Antonio Ramiro</td>
+                <td>43578904W</td>
+
+            </tr>
+            <tr>
+                <td>Manuel Hervas</td>
+                <td>26537692L</td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <!--
+    <div class="container">
+        <div class="input-group">
+            <input type="text" placeholder="Nombre" id="nombre">
+            <input type="text" placeholder="Dni" id="dni">
+            <button class="guardar">Guardar</button>
+            <button class="cancelar">Cancelar</button>
+        </div>
+
+       
+        </div>   
+   -->
+
+
+</body>
+
+</html>

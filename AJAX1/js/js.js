@@ -17,7 +17,6 @@ window.addEventListener("load", function () {
         .then((respuesta) => respuesta.json())
         .then((datos) => {
           datos.forEach((element) => {
-            debugger;
             let fila = modelo.cloneNode(true);
             fila.children[0].innerHTML = element.dni;
             fila.children[1].innerHTML = element.nombre;

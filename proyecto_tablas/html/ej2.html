@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intercambio de Selects</title>
+    <script src="../js/ej2.js"></script>
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+        }
+
+        select {
+            width: 150px;
+            height: 120px;
+            margin: 0 10px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        button {
+            margin: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <select id="select1" multiple>
+            <option value="Nombre1">Manu</option>
+            <option value="Nombre2">Paco</option>
+            <option value="Nombre3">Carlitos</option>
+            <option value="Nombre4">Joselito</option>
+        </select>
+
+        <div class="buttons">
+            <button onclick="moverUno('select1', 'select2')">--></button>
+            <button onclick="moverTodo('select1', 'select2')">-->--></button>
+            <button onclick="moverUno('select2', 'select1')"><-- </button>
+                    <button onclick="moverTodo('select2', 'select1')"><--<--< /button>
+        </div>
+
+        <select id="select2" multiple></select>
+    </div>
+
+
+</body>
+
+</html>
