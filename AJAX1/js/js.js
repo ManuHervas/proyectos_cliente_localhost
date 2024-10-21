@@ -3,11 +3,22 @@ window.addEventListener("load", function () {
   var contenedor = document.getElementById("contenedor");
   var auxiliar = document.createElement("div");
   var auxTbody = document.createElement("tbody");
+
+  //Capturo la tabla
+
   var tabla;
   fetch("./plantillas/tabla.html")
     .then((respuesta) => respuesta.text())
     .then((texto) => {
       auxiliar.innerHTML = texto;
+      var t = contenedor.firstElementChild;
+      t.addEventListener("dbclick", function (ev) {
+        if (!ev.ctrlKey) {
+          t.classList.toggle("ACTIVADO");
+        } else {
+          t.classList.toggle("IMPORTANTE");
+        }
+      });
       tabla = auxiliar.firstElementChild;
       var tBody = tabla.tBodies[0];
       auxTbody.appendChild(tBody.firstElementChild);

@@ -8,6 +8,7 @@
     <script src="../js/Tablas.js"></script>
     <script src="../js/ejOrdenarTablas.js"></script>
     <script src="../js/miLibreria.js"></script>
+    <script src="../js/fichero.js"></script>
     <style>
         table {
             width: 60%;
@@ -142,6 +143,11 @@
             </tr>
         </tbody>
     </table>
+
+    <form action="guardarFichero.php" method="post" enctype="multipart/form-data">
+        <input type="file" name="fichero">
+        <input type="submit" value="GUARDAR" id="enviar">
+    </form>
 
     <!--
     <div class="container">
