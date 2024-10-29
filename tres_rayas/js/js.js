@@ -26,4 +26,35 @@ function paint(matriz, tabla) {
   }
 }
 
-function pressed() {}
+function pressed(fila, columna, turno) {
+  const tabla = document.getElementById("tabla");
+  if (movement(fila, columna, turno)) {
+    paint(matriz, tabla);
+  }
+}
+
+window.addEventListener("load", function () {
+  var turno = 1;
+  const celdas = document.querySelectorAll("#tabla td");
+
+  celdas.forEach((celda) => {
+    celda.addEventListener("click", function () {
+      const fila = this.getAttribute("data-fila");
+      const columna = this.getAttribute("data-columna");
+
+      pressed(fila, columna, turno);
+      turno = turno * -1;
+    });
+  });
+
+  /*tds = document.querySelectorAll("#tabla td");
+  for (let i = 0; i < tds.length; i++) {
+    tds[i].addEventListener("click", function () {
+      if (tds[i].textContent.trim() === "") {
+        tds[i].textContent = "X";
+      } else {
+        
+      }
+    });
+  }*/
+});
