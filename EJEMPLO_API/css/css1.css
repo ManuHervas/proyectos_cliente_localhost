@@ -1,0 +1,18 @@
+
+
+.mas{
+    display: inline-block;
+    width: 204px;
+    height: 192px;
+    background-image: url(../imgs/mas.png);
+}
+
+.derecha{
+    text-align: right;    
+}
+
+table{
+    min-width: 150px;
+    min-height: 200px;
+    border: 1px solid black;
+}
