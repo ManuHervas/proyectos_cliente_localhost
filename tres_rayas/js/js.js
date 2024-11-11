@@ -26,4 +26,59 @@ function paint(matriz, tabla) {
   }
 }
 
-function pressed() {}
+function checkWinner() {
+  for (let i = 0; i < 3; i++) {
+    if (
+      Math.abs(matriz[i][0] + matriz[i][1] + matriz[i][2]) === 3 ||
+      Math.abs(matriz[0][i] + matriz[1][i] + matriz[2][i]) === 3
+    ) {
+      return matriz[i][i];
+    }
+  }
+  // Verificar diagonales
+  if (
+    Math.abs(matriz[0][0] + matriz[1][1] + matriz[2][2]) === 3 ||
+    Math.abs(matriz[0][2] + matriz[1][1] + matriz[2][0]) === 3
+  ) {
+    return matriz[1][1];
+  }
+  return 0;
+}
+
+function pressed(fila, columna, turno) {
+  const tabla = document.getElementById("tabla");
+  if (movement(fila, columna, turno)) {
+    paint(matriz, tabla);
+    const ganador = checkWinner();
+    if (ganador !== 0) {
+      setTimeout(() => {
+        alert(`¡Jugador ${ganador === 1 ? "X" : "O"} ha ganado!`);
+        resetGame();
+      }, 100); // Espera antes de mostrar el mensaje
+    }
+  }
+}
+
+function resetGame() {
+  matriz = [
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0],
+  ];
+  const tabla = document.getElementById("tabla");
+  paint(matriz, tabla);
+}
+
+window.addEventListener("load", function () {
+  var turno = 1;
+  const celdas = document.querySelectorAll("#tabla td");
+  celdas.forEach((celda) => {
+    celda.addEventListener("click", function () {
+      const fila = this.getAttribute("data-fila");
+      const columna = this.getAttribute("data-columna");
+
+      pressed(fila, columna, turno);
+      turno = turno * -1;
+    });
+  });
+});
