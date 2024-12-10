@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+}
+
+#tablero {
+  background-color: black;
+  height: 100vh;
+}
+
+.raqueta {
+  position: absolute;
+  height: 140px;
+  width: 20px;
+  background-color: white;
+}
+
+#tablero .raqueta:nth-of-type(1) {
+  background-color: rgb(255, 187, 0);
+  left: 0;
+}
+
+#tablero .raqueta:nth-of-type(2) {
+  background-color: green;
+  right: 0;
+}

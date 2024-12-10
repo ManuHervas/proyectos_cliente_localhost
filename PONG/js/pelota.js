@@ -1,0 +1,9 @@
+class Pelota{    
+
+    constructor(dimensiones, ){
+
+    }
+
+
+
+}
